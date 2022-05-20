@@ -2,7 +2,7 @@ import React from "react"
 import { Provider as ScenifyProvider } from "@scenify/react"
 import { Client as Styletron } from "styletron-engine-atomic"
 import { Provider as StyletronProvider } from "styletron-react"
-import { BaseProvider, DarkTheme } from "baseui"
+import { BaseProvider, LightTheme } from "baseui"
 import { store } from "./store/store"
 import { Provider } from "react-redux"
 
@@ -13,7 +13,7 @@ export default function ({ children }: { children: React.ReactNode }) {
     <Provider store={store}>
       <ScenifyProvider>
         <StyletronProvider value={engine}>
-          <BaseProvider theme={DarkTheme}>{children}</BaseProvider>
+          <BaseProvider theme={LightTheme}>{children}</BaseProvider>
         </StyletronProvider>
       </ScenifyProvider>
     </Provider>
