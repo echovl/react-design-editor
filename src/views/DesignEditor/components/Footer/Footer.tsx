@@ -15,6 +15,7 @@ const Container = styled<{}, "div", Theme>("div", ({ $theme }) => ({
   gridTemplateColumns: "240px 1fr 240px",
   borderTop: "1px solid #d7d8e3",
   alignItems: "center",
+  padding: "0 0.5rem",
 }))
 
 interface Options {
@@ -29,7 +30,7 @@ export default function () {
   const zoomRatio: number = useZoomRatio()
 
   React.useEffect(() => {
-    setOptions({ ...options, zoomRatio: zoomRatio * 100 })
+    setOptions({ ...options, zoomRatio: Math.round(zoomRatio * 100) })
   }, [zoomRatio])
 
   const handleChange = (type: string, value: any) => {
