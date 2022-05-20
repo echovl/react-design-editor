@@ -2,6 +2,7 @@ import { SubMenuType } from "~/constants/editor"
 import useAppContext from "~/hooks/useAppContext"
 import { styled } from "baseui"
 import { useActiveObject } from "@scenify/react"
+import Text from "./panelItems/Text"
 
 const Container = styled("div", (props) => ({
   background: "#ffffff",
@@ -25,7 +26,11 @@ function PanelsList() {
   //       ? PanelItems[activeSubMenu]
   //       : PanelItems[activePanel]
 
-  return <Container></Container>
+  return (
+    <Container>
+      <Text />
+    </Container>
+  )
 }
 
 export default PanelsList

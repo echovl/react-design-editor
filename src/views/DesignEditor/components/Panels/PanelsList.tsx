@@ -4,7 +4,6 @@ import useAppContext from "~/hooks/useAppContext"
 import { styled } from "baseui"
 import { useEditor } from "@scenify/react"
 import Icons from "~/components/Icons"
-import { SubMenuType } from "~/constants/editor"
 
 const Container = styled("div", (props) => ({
   width: "84px",
@@ -38,7 +37,7 @@ function PanelListItem({ label, icon, activePanel }: any) {
     <div
       onClick={() => {
         editor.objects.deselect()
-        setActiveSubMenu(SubMenuType.ANIMATIONS)
+        // setActiveSubMenu(null)
         setActivePanel(label)
       }}
       className={css({

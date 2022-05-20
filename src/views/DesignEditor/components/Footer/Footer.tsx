@@ -28,14 +28,11 @@ export default function () {
   const zoomRatio: number = useZoomRatio()
 
   React.useEffect(() => {
-    console.log(zoomRatio)
     setOptions({ ...options, zoomRatio: zoomRatio * 100 })
   }, [zoomRatio])
 
   const handleChange = (type: string, value: any) => {
-    console.log(value)
     editor.zoom.zoomToRatio(value / 100)
-    // setOptions({ ...options, [type]: value })
   }
   return (
     <Container>
@@ -79,7 +76,7 @@ export default function () {
           value={[options.zoomRatio]}
           onChange={({ value }) => handleChange("zoomRatio", value[0])}
           min={10}
-          max={300}
+          max={240}
         />
         <Button kind={KIND.tertiary} size={SIZE.compact}>
           <Icons.RemoveCircleOutline size={24} />
@@ -90,7 +87,7 @@ export default function () {
           overrides={{
             Root: {
               style: {
-                width: "100px",
+                width: "96px",
               },
             },
           }}
