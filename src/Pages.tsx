@@ -1,25 +1,26 @@
-import React from "react";
-import { LightTheme, ThemeProvider } from "baseui";
-import { Drawer, SIZE } from "baseui/drawer";
-import { Button, KIND } from "baseui/button";
-import { useSelector } from "react-redux";
-import { selectPages } from "./store/slices/design-editor/selectors";
-import { nanoid } from "nanoid";
-import { useAppDispatch } from "./store/store";
-import { addPage } from "./store/slices/design-editor/actions";
+// @ts-nocheck
+import React from "react"
+import { LightTheme, ThemeProvider } from "baseui"
+import { Drawer, SIZE } from "baseui/drawer"
+import { Button, KIND } from "baseui/button"
+import { useSelector } from "react-redux"
+import { selectPages } from "./store/slices/design-editor/selectors"
+import { nanoid } from "nanoid"
+import { useAppDispatch } from "./store/store"
+import { addPage } from "./store/slices/design-editor/actions"
 
 export default function Pages() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const pages = useSelector(selectPages);
-  const dispach = useAppDispatch();
+  const [isOpen, setIsOpen] = React.useState(false)
+  const pages = useSelector(selectPages)
+  const dispach = useAppDispatch()
   const handleAddPage = () => {
     dispach(
       addPage({
         id: nanoid(),
         name: "New page",
       })
-    );
-  };
+    )
+  }
   return (
     <ThemeProvider theme={LightTheme}>
       <Button
@@ -35,12 +36,7 @@ export default function Pages() {
       >
         Pages
       </Button>
-      <Drawer
-        size={SIZE.auto}
-        isOpen={isOpen}
-        autoFocus
-        onClose={() => setIsOpen(false)}
-      >
+      <Drawer size={SIZE.auto} isOpen={isOpen} autoFocus onClose={() => setIsOpen(false)}>
         <div
           style={{
             height: "100%",
@@ -66,7 +62,7 @@ export default function Pages() {
                 >
                   Page {index}
                 </div>
-              );
+              )
             })}
           </div>
 
@@ -74,5 +70,5 @@ export default function Pages() {
         </div>
       </Drawer>
     </ThemeProvider>
-  );
+  )
 }

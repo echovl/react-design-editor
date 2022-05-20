@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from "react"
 import { styled } from "baseui"
 import { Theme } from "baseui/theme"
