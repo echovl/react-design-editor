@@ -6,7 +6,7 @@ import Text from "./panelItems/Text"
 
 const Container = styled("div", (props) => ({
   background: "#ffffff",
-  width: "360px",
+  width: "300px",
   flex: "none",
   borderRight: "1px solid #d7d8e3",
 }))
