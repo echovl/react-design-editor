@@ -3,6 +3,7 @@ import useAppContext from "~/hooks/useAppContext"
 import { styled } from "baseui"
 import { useActiveObject } from "@scenify/react"
 import Text from "./panelItems/Text"
+import Customize from "./panelItems/Customize"
 
 const Container = styled("div", (props) => ({
   background: "#ffffff",
@@ -28,7 +29,7 @@ function PanelsList() {
 
   return (
     <Container>
-      <Text />
+      <Customize />
     </Container>
   )
 }

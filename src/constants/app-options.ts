@@ -1,39 +1,40 @@
 export const panelListItems = [
   {
-    id: 'templates',
-    name: 'Templates',
+    id: "templates",
+    name: "Templates",
   },
   {
-    id: 'elements',
-    name: 'Elements',
+    id: "customize",
+    name: "Customize",
   },
   {
-    id: 'image',
-    name: 'Images',
+    id: "elements",
+    name: "Elements",
   },
   {
-    id: 'uploads',
-    name: 'Uploads',
+    id: "image",
+    name: "Images",
   },
   {
-    id: 'text',
-    name: 'Text',
+    id: "uploads",
+    name: "Uploads",
   },
   {
-    id: 'illustrations',
-    name: 'Illustrations',
+    id: "text",
+    name: "Text",
   },
-  // {
-  //   id: 'background',
-  //   name: 'Background',
-  // },
   {
-    id: 'pixabay',
-    name: 'Pixabay',
+    id: "illustrations",
+    name: "Illustrations",
+  },
+
+  {
+    id: "pixabay",
+    name: "Pixabay",
   },
 ]
 
 export enum PanelType {
-  TEMPLATES = 'Templates',
-  BACKGROUND = 'Background',
+  TEMPLATES = "Templates",
+  BACKGROUND = "Background",
 }

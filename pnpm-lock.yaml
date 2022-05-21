@@ -14,6 +14,7 @@ specifiers:
   install: ^0.13.0
   nanoid: ^3.3.4
   react: ^18.0.0
+  react-colorful: ^5.5.1
   react-dom: ^18.0.0
   react-redux: ^8.0.1
   react-router-dom: ^6.3.0
@@ -31,6 +32,7 @@ dependencies:
   install: 0.13.0
   nanoid: 3.3.4
   react: 18.1.0
+  react-colorful: 5.5.1_ef5jwxihqo6n7gxfmzogljlgcm
   react-dom: 18.1.0_react@18.1.0
   react-redux: 8.0.1_e6senhi6gkhdouiqizr2s56gsi
   react-router-dom: 6.3.0_ef5jwxihqo6n7gxfmzogljlgcm
@@ -1948,6 +1950,16 @@ packages:
     dependencies:
       '@babel/runtime': 7.18.0
       react: 18.1.0
+    dev: false
+
+  /react-colorful/5.5.1_ef5jwxihqo6n7gxfmzogljlgcm:
+    resolution: {integrity: sha512-M1TJH2X3RXEt12sWkpa6hLc/bbYS0H6F4rIqjQZ+RxNBstpY67d9TrFXtqdZwhpmBXcCwEi7stKqFue3ZRkiOg==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
     dev: false
 
   /react-dom/18.1.0_react@18.1.0:

@@ -18,6 +18,7 @@ import TimePast from "./TimePast"
 import AddCircleOutline from "./AddCircleOutline"
 import RemoveCircleOutline from "./RemoveCircleOutline"
 import InformationCircleOutline from "./InformationCircleOutline"
+import Customize from "./Customize"
 
 class Icons {
   static Background = Background
@@ -40,6 +41,7 @@ class Icons {
   static AddCircleOutline = AddCircleOutline
   static RemoveCircleOutline = RemoveCircleOutline
   static InformationCircleOutline = InformationCircleOutline
+  static Customize = Customize
 }
 
 export default Icons
