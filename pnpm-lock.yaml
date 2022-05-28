@@ -2,7 +2,8 @@ lockfileVersion: 5.4
 
 specifiers:
   '@reduxjs/toolkit': ^1.8.1
-  '@scenify/react': ^0.3.1
+  '@scenify/react': ^1.0.6
+  '@scenify/react-custom-scrollbar': ^0.1.0
   '@types/node': ^17.0.35
   '@types/react': ^18.0.0
   '@types/react-dom': ^18.0.0
@@ -10,6 +11,7 @@ specifiers:
   '@types/styletron-react': ^5.0.3
   '@types/styletron-standard': ^2.0.2
   '@vitejs/plugin-react': ^1.3.0
+  axios: ^0.27.2
   baseui: ^11.0.2
   install: ^0.13.0
   nanoid: ^3.3.4
@@ -26,8 +28,10 @@ specifiers:
 
 dependencies:
   '@reduxjs/toolkit': 1.8.1_j24pcqpkbsj43woxscsovlj4au
-  '@scenify/react': 0.3.1
+  '@scenify/react': 1.0.6
+  '@scenify/react-custom-scrollbar': 0.1.0_react@18.1.0
   '@types/node': 17.0.35
+  axios: 0.27.2
   baseui: 11.0.3_6tvz3ywzsfg6qo65qfhdumuqkq
   install: 0.13.0
   nanoid: 3.3.4
@@ -424,10 +428,10 @@ packages:
     resolution: {integrity: sha512-0HwnY8uPWcCloTgdbbaJG3MbDUfNf6yKWZfCKxFv9yj2Sbp4mSKaIjC7Cr/5L4hMxvrrk85CU3wlAg7EtBBJ1Q==}
     dev: false
 
-  /@scenify/core/0.3.1:
-    resolution: {integrity: sha512-oFYXHe2TR42JAsSdaZWhnVh2Yn9IigiBuIPr5lyqOjO5AZLC4r8XIQE3HST1lB/ejLjZU8fkdMHdJIiD/tYTDw==}
+  /@scenify/core/1.0.6:
+    resolution: {integrity: sha512-Etf53BTqido/UhzQimzbtG9HJBASIumdrdEMDUEA6KgEn6ZDP/IT6h1HcH3AEJKpJa4T6CA6BDwyhZwdFm/5Vw==}
     dependencies:
-      '@scenify/objects': 0.3.1_fabric@5.2.1
+      '@scenify/objects': 1.0.6_fabric@5.2.1
       fabric: 5.2.1
       lodash: 4.17.21
       nanoid: 3.3.4
@@ -439,8 +443,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@scenify/objects/0.3.1_fabric@5.2.1:
-    resolution: {integrity: sha512-aTqWVxUTqWVCeM7gqicjTiDY5yJUJHAQZxX2/G7XB4GaMGKmWAoVYG+AC1Tt+gB6wihqM75emGymaapw7KMurg==}
+  /@scenify/objects/1.0.6_fabric@5.2.1:
+    resolution: {integrity: sha512-u6LVQ26MuxGLtqhmBif7zC3IiGXlcFJtu3IHJgCoEE8bpdHjwzstAEn3IK/M6wpQvJYGNt+gBZfY0a8UZlj/Yg==}
     peerDependencies:
       fabric: ^5.2.1
     dependencies:
@@ -448,10 +452,21 @@ packages:
       lodash: 4.17.21
     dev: false
 
-  /@scenify/react/0.3.1:
-    resolution: {integrity: sha512-CFuU75L6fuHzmUU755xGjsp5l9TiHsNcZXOgdGeJcdOuzpdTpo5zGVP+Kmuqjq7dyi6kBnCaD19oR0gIn/xrtg==}
+  /@scenify/react-custom-scrollbar/0.1.0_react@18.1.0:
+    resolution: {integrity: sha512-bzSJkYGOh9uClD7cFM6BqsNGi7kHpi4/HqHrkP5+q1iuB3z2RdT4vOX9WQaQwYST7fiaQDbzSuc+1ONUj/HhJg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
     dependencies:
-      '@scenify/core': 0.3.1
+      dom-css: 2.1.0
+      raf: 3.4.1
+      react: 18.1.0
+    dev: false
+
+  /@scenify/react/1.0.6:
+    resolution: {integrity: sha512-e+wLWXmA0sY60OqrzYQmCpuvBikZQAd8cfCsl2t/iGMvj/Oo/MU9zCV8Zx6FreOwittZrPlZ+A5adK4Upqhmgg==}
+    dependencies:
+      '@scenify/core': 1.0.6
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
     transitivePeerDependencies:
@@ -574,6 +589,10 @@ packages:
     dev: false
     optional: true
 
+  /add-px-to-style/1.0.0:
+    resolution: {integrity: sha512-YMyxSlXpPjD8uWekCQGuN40lV4bnZagUwqa2m/uFv1z/tNImSk9fnXVMUI5qwME/zzI3MMQRvjZ+69zyfSSyew==}
+    dev: false
+
   /agent-base/6.0.2:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
     engines: {node: '>= 6.0.0'}
@@ -614,13 +633,21 @@ packages:
   /asynckit/0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
     dev: false
-    optional: true
 
   /attr-accept/1.1.3:
     resolution: {integrity: sha512-iT40nudw8zmCweivz6j58g+RT33I4KbaIvRUhjNmDwO2WmsQUxFEZZYZ5w3vXe5x5MX9D7mfvA/XaLOZYFR9EQ==}
     engines: {node: '>=4'}
     dependencies:
       core-js: 2.6.12
+    dev: false
+
+  /axios/0.27.2:
+    resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
+    dependencies:
+      follow-redirects: 1.15.0
+      form-data: 4.0.0
+    transitivePeerDependencies:
+      - debug
     dev: false
 
   /balanced-match/1.0.2:
@@ -756,7 +783,6 @@ packages:
     dependencies:
       delayed-stream: 1.0.0
     dev: false
-    optional: true
 
   /commander/2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
@@ -1092,7 +1118,6 @@ packages:
     resolution: {integrity: sha1-3zrhmayt+31ECqrgsp4icrJOxhk=}
     engines: {node: '>=0.4.0'}
     dev: false
-    optional: true
 
   /delegates/1.0.0:
     resolution: {integrity: sha1-hMbhWbgZBP3KWaDvRM2HDTElD5o=}
@@ -1107,6 +1132,14 @@ packages:
 
   /detect-node-es/1.1.0:
     resolution: {integrity: sha512-ypdmJU/TbBby2Dxibuv7ZLW3Bs1QEmM7nHjEANfohJLvE0XVujisn1qPJcZxg+qDucsr+bP6fLD1rPS3AhJ7EQ==}
+    dev: false
+
+  /dom-css/2.1.0:
+    resolution: {integrity: sha1-/bwtWgFdCj4YcuEUcrvQ57nmogI=}
+    dependencies:
+      add-px-to-style: 1.0.0
+      prefix-style: 2.0.1
+      to-camel-case: 1.0.0
     dev: false
 
   /dom-helpers/5.2.1:
@@ -1420,6 +1453,16 @@ packages:
       tslib: 2.4.0
     dev: false
 
+  /follow-redirects/1.15.0:
+    resolution: {integrity: sha512-aExlJShTV4qOUOL7yF1U5tvLCB0xQuudbf6toyYA0E/acBNw71mvjFTnLaRp50aQaYocMR0a/RMMBIHeZnGyjQ==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dev: false
+
   /form-data/4.0.0:
     resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
     engines: {node: '>= 6'}
@@ -1428,7 +1471,6 @@ packages:
       combined-stream: 1.0.8
       mime-types: 2.1.35
     dev: false
-    optional: true
 
   /fs-minipass/2.1.0:
     resolution: {integrity: sha512-V/JgOLFCS+R6Vcq0slCuaeWEdNC3ouDlJMNIsacH2VtALiu9mV4LPrHc5cDl8k5aw6J8jwgWWpiTo5RYhmIzvg==}
@@ -1736,7 +1778,6 @@ packages:
     resolution: {integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==}
     engines: {node: '>= 0.6'}
     dev: false
-    optional: true
 
   /mime-types/2.1.35:
     resolution: {integrity: sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==}
@@ -1744,7 +1785,6 @@ packages:
     dependencies:
       mime-db: 1.52.0
     dev: false
-    optional: true
 
   /mimic-response/2.1.0:
     resolution: {integrity: sha512-wXqjST+SLt7R009ySCglWBCFpjUygmCIfD790/kVbiGmUgfYGuB14PiTd5DwVxSV4NcYHjzMkoj5LjQZwTQLEA==}
@@ -1878,6 +1918,10 @@ packages:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
     dev: true
 
+  /performance-now/2.1.0:
+    resolution: {integrity: sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=}
+    dev: false
+
   /picocolors/1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
     dev: true
@@ -1907,6 +1951,10 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.0.2
     dev: true
+
+  /prefix-style/2.0.1:
+    resolution: {integrity: sha1-ZrupqHDP2jCKXcIOhekSCTLJWgY=}
+    dev: false
 
   /prelude-ls/1.1.2:
     resolution: {integrity: sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=}
@@ -1942,6 +1990,12 @@ packages:
     engines: {node: '>=6'}
     dev: false
     optional: true
+
+  /raf/3.4.1:
+    resolution: {integrity: sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA==}
+    dependencies:
+      performance-now: 2.1.0
+    dev: false
 
   /react-clientside-effect/1.2.6_react@18.1.0:
     resolution: {integrity: sha512-XGGGRQAKY+q25Lz9a/4EPqom7WRjz3z9R2k4jhVKA/puQFH/5Nt27vFZYql4m4NVNdUvX8PS3O7r/Zzm7cjUlg==}
@@ -2395,10 +2449,26 @@ packages:
     dev: false
     optional: true
 
+  /to-camel-case/1.0.0:
+    resolution: {integrity: sha1-GlYFSy+daWKYzmamCJcyK29CPkY=}
+    dependencies:
+      to-space-case: 1.0.0
+    dev: false
+
   /to-fast-properties/2.0.0:
     resolution: {integrity: sha1-3F5pjL0HkmW8c+A3doGk5Og/YW4=}
     engines: {node: '>=4'}
     dev: true
+
+  /to-no-case/1.0.2:
+    resolution: {integrity: sha1-xyKQcWTvaxeBMsjmmTAhLRtKoWo=}
+    dev: false
+
+  /to-space-case/1.0.0:
+    resolution: {integrity: sha1-sFLar7Gysp3HcM6gFj5ewOvJ/Bc=}
+    dependencies:
+      to-no-case: 1.0.2
+    dev: false
 
   /tough-cookie/4.0.0:
     resolution: {integrity: sha512-tHdtEpQCMrc1YLrMaqXXcj6AxhYi/xgit6mZu1+EDWUn+qhUf8wMQoFIy9NXuq23zAwtcB0t/MjACGR18pcRbg==}

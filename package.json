@@ -9,8 +9,10 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
-    "@scenify/react": "^0.3.1",
+    "@scenify/react": "^1.0.6",
+    "@scenify/react-custom-scrollbar": "^0.1.0",
     "@types/node": "^17.0.35",
+    "axios": "^0.27.2",
     "baseui": "^11.0.2",
     "install": "^0.13.0",
     "nanoid": "^3.3.4",

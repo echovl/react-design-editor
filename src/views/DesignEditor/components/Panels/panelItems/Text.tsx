@@ -31,6 +31,7 @@ export default function () {
     }
   }
   const addComponent = async (component: any) => {
+    console.log(component)
     if (editor) {
       const fontItemsList: FontItem[] = []
       if (component.objects) {
@@ -94,7 +95,7 @@ export default function () {
           padding: "1.5rem",
         }}
       >
-        {textComponents.map((tc) => (
+        {[...textComponents].map((tc) => (
           <TextComponentItem onClick={addComponent} key={tc.id} component={tc} />
         ))}
       </div>

@@ -19,7 +19,9 @@ import AddCircleOutline from "./AddCircleOutline"
 import RemoveCircleOutline from "./RemoveCircleOutline"
 import InformationCircleOutline from "./InformationCircleOutline"
 import Customize from "./Customize"
-
+import SwapHorizontal from "./SwapHorizontal"
+import ArrowBackOutline from "./ArrowBackOutline"
+import Underline from "./Underline"
 class Icons {
   static Background = Background
   static Elements = Elements
@@ -42,6 +44,9 @@ class Icons {
   static RemoveCircleOutline = RemoveCircleOutline
   static InformationCircleOutline = InformationCircleOutline
   static Customize = Customize
+  static SwapHorizontal = SwapHorizontal
+  static ArrowBackOutline = ArrowBackOutline
+  static Underline = Underline
 }
 
 export default Icons
