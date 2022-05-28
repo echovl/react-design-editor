@@ -2,10 +2,11 @@
 import React from "react"
 import InformationCircleOutline from "~/components/Icons/InformationCircleOutline"
 import Underline from "~/components/Icons/Underline"
+import Spacing from "~/components/Icons/Spacing"
 
 import Shadow from "./Common/Shadow"
 import { Input, SIZE } from "baseui/input"
-import { Button, SHAPE } from "baseui/button"
+import { Button } from "baseui/button"
 import { ChevronRight } from "baseui/icon"
 import useAppContext from "~/hooks/useAppContext"
 import { useActiveObject, useEditor } from "@scenify/react"
@@ -15,40 +16,12 @@ import { getTextOptions } from "~/utils/object-options"
 import { fontStyleLabels } from "~/constants/fonts"
 import { Select } from "baseui/select"
 import { loadFonts } from "~/utils/fonts"
-
-interface State {
-  underline: boolean
-  textAlign: string
-  fontSize: number
-  fill: string
-  charSpacing: number
-  lineHeight: number
-  fontFamily: string
-  isGroup: boolean
-  isMultiple: boolean
-  styles: any[]
-  font: any
-  activeStyle: any
-}
-
-const defaultProps: State = {
-  underline: false,
-  textAlign: "left",
-  charSpacing: 0,
-  fill: "#000000",
-  fontFamily: "Open Sans",
-  fontSize: 12,
-  lineHeight: 12,
-  isGroup: false,
-  isMultiple: false,
-  styles: [],
-  font: {},
-  activeStyle: {},
-}
+import { TextOptions } from "~/interfaces/editor"
+import { defaultTextOptions } from "~/constants/contants"
 
 export default function () {
   const fonts = useSelector(selectFonts)
-  const [state, setState] = React.useState<State>(defaultProps)
+  const [state, setState] = React.useState<TextOptions>(defaultTextOptions)
   const { setActiveSubMenu } = useAppContext()
   const activeObject = useActiveObject() as any
   const editor = useEditor()
@@ -81,6 +54,8 @@ export default function () {
         },
         fill: isGroup ? "#000000" : isNotGradient ? textOptions.fill : "#000000",
       })
+    } else {
+      setState(defaultTextOptions)
     }
   }, [activeObject])
 
@@ -92,8 +67,6 @@ export default function () {
         name: updatedFamily,
         url: selected.url,
       }
-      console.log({ font_2: font })
-
       await loadFonts([font])
       editor.objects.update({
         fontFamily: updatedFamily,
@@ -160,7 +133,18 @@ export default function () {
         </div>
       </div>
       <div style={{ padding: "0 1.5rem" }}>
-        <Button onClick={() => handleChange("underline", activeObject.underline ? false : true)} kind="tertiary">
+        <Button
+          size="compact"
+          onClick={() => handleChange("underline", activeObject.underline ? false : true)}
+          kind="tertiary"
+        >
+          <Spacing size={24} />
+        </Button>
+        <Button
+          size="compact"
+          onClick={() => handleChange("underline", activeObject.underline ? false : true)}
+          kind="tertiary"
+        >
           <Underline size={24} />
         </Button>
       </div>

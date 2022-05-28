@@ -1,10 +1,7 @@
 import React from "react"
-import { SubMenuType } from "~/constants/editor"
 import useAppContext from "~/hooks/useAppContext"
 import { styled } from "baseui"
 import { useActiveObject } from "@scenify/react"
-import Text from "./panelItems/Text"
-import Customize from "./panelItems/Customize"
 import getSelectionType from "~/utils/get-selection-type"
 import panelItems from "./panelItems"
 
@@ -21,7 +18,7 @@ interface State {
 }
 function PanelsList() {
   const [state, setState] = React.useState<State>({ panel: "Text" })
-  const { activePanel, activeSubMenu, setActiveSubMenu } = useAppContext()
+  const { activePanel, activeSubMenu } = useAppContext()
   const activeObject = useActiveObject()
 
   React.useEffect(() => {
@@ -48,7 +45,7 @@ function PanelsList() {
       setState({ panel: activePanel })
     }
   }, [activeSubMenu])
-
+  // @ts-ignore
   const Component = panelItems[state.panel]
   return <Container>{Component && <Component />}</Container>
 }
